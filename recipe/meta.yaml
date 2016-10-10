@@ -38,6 +38,7 @@ test:
 about:
     home: http://pypi.python.org/pypi/{{ name }}
     dev_url: http://github.com/inducer/{{ name }}
+    doc_url: https://documen.tician.de/{{ name }}
     license: MIT
     license_file: LICENSE
     summary: A package for symbolic computation
