@@ -34,6 +34,7 @@ test:
         - {{ name }}
     commands:
          - cd $SRC_DIR/test && python -m pytest  # [unix]
+         - cd %SRC_DIR%/test && python -m pytest  # [win]
 
 about:
     home: http://pypi.python.org/pypi/{{ name }}
