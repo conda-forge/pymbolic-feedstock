@@ -11,8 +11,12 @@ source:
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 
+    # Delete in the next version past 2016.2.3.
+    patches:
+    - geo-alg-integrality-test.patch
+
 build:
-    number: 0
+    number: 1
     script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -34,10 +38,12 @@ test:
         - {{ name }}
     commands:
          - cd $SRC_DIR/test && python -m pytest  # [unix]
+         - cd %SRC_DIR%/test && python -m pytest  # [win]
 
 about:
     home: http://pypi.python.org/pypi/{{ name }}
     dev_url: http://github.com/inducer/{{ name }}
+    doc_url: https://documen.tician.de/{{ name }}
     license: MIT
     license_file: LICENSE
     summary: A package for symbolic computation
@@ -45,4 +51,3 @@ about:
 extra:
     recipe-maintainers:
         - inducer
-        - ocefpaf
