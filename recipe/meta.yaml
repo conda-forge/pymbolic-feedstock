@@ -41,9 +41,9 @@ test:
          - cd %SRC_DIR%/test && python -m pytest  # [win]
 
 about:
-    home: http://pypi.python.org/pypi/{{ name }}
-    dev_url: http://github.com/inducer/{{ name }}
-    doc_url: https://documen.tician.de/{{ name }}
+    home: http://pypi.python.org/pypi/pymbolic
+    dev_url: http://github.com/inducer/pymbolic
+    doc_url: https://documen.tician.de/pymbolic
     license: MIT
     license_file: LICENSE
     summary: A package for symbolic computation
