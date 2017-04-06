@@ -40,7 +40,8 @@ test:
     source_files:
         - test
     commands:
-        - cd test && python -m pytest
+        - "(cd test && python -m pytest)"  # [unix]
+        - cd test && python -m pytest  # [win]
 
 about:
     home: http://pypi.python.org/pypi/pymbolic
