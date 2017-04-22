@@ -1,6 +1,6 @@
 {% set name = "pymbolic" %}
-{% set version = "2016.2.3" %}
-{% set sha256 = "cd422e1484731421e30d3addcf0cdf9548535e6b3d006ff9cc78edde520386b6" %}
+{% set version = "2017.1" %}
+{% set sha256 = "2cf9125eb5e5c058776fcb493adb94737ca820eb10eaf5de7196fdd4f82d3a22" %}
 
 package:
     name: {{ name|lower }}
@@ -11,13 +11,8 @@ source:
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 
-    # Delete in the next version past 2016.2.3.
-    patches:
-    - geo-alg-integrality-test.patch
-    - bump-ga-tolerance.diff
-
 build:
-    number: 1
+    number: 0
     script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
