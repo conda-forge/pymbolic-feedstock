@@ -14,9 +14,8 @@ Summary: A package for symbolic computation
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/pymbolic-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/pymbolic-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/pymbolic-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/pymbolic-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/pymbolic-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/pymbolic-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/pymbolic-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/pymbolic-feedstock)
 
 Current release info
 ====================
