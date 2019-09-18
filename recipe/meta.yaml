@@ -1,6 +1,6 @@
 {% set name = "pymbolic" %}
-{% set version = "2018.1" %}
-{% set sha256 = "a47d5524d6a3cdc8a028079ce632eeb45ceea7243272d234f250622087688207" %}
+{% set version = "2019.1" %}
+{% set sha256 = "d57ba2919f5b0482ccadcafee2518faec095a0a74a26ca7e137f289ddbb39733" %}
 
 package:
     name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
     noarch: python
-    number: 1
+    number: 0
     script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
