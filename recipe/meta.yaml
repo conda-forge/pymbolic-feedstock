@@ -1,53 +1,53 @@
 {% set name = "pymbolic" %}
-{% set version = "2019.2" %}
-{% set sha256 = "a7507864a76574d72bf5732497b247661c6ad73bb277cd9c8aae09e90a62e05a" %}
+{% set version = "2020.1" %}
+{% set sha256 = "ca029399f9480f6d51fbac0349fddbb42d937620deb03befa0ba94ac08895e6b" %}
 
 package:
-    name: {{ name|lower }}
-    version: {{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-    fn: {{ name }}-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: {{ sha256 }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-    noarch: python
-    number: 0
-    script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-    build:
-        - python
-        - setuptools
-        - pytools
-        - six
-        - pip
-    run:
-        - python
-        - numpy
-        - pytools
-        - six
+  build:
+    - python
+    - setuptools
+    - pytools
+    - six
+    - pip
+  run:
+    - python
+    - numpy
+    - pytools
+    - six
 
 test:
-    requires:
-        - pytest
-    imports:
-        - {{ name }}
-    source_files:
-        - test
-    commands:
-        - "(cd test && python -m pytest)"  # [unix]
-        - cd test && python -m pytest  # [win]
+  requires:
+    - pytest
+  imports:
+    - {{ name }}
+  source_files:
+    - test
+  commands:
+    - (cd test && python -m pytest)        # [unix]
+    - cd test && python -m pytest      # [win]
 
 about:
-    home: http://pypi.python.org/pypi/pymbolic
-    dev_url: http://github.com/inducer/pymbolic
-    doc_url: https://documen.tician.de/pymbolic
-    license: MIT
-    license_file: LICENSE
-    summary: A package for symbolic computation
+  home: http://pypi.python.org/pypi/pymbolic
+  dev_url: http://github.com/inducer/pymbolic
+  doc_url: https://documen.tician.de/pymbolic
+  license: MIT
+  license_file: LICENSE
+  summary: A package for symbolic computation
 
 extra:
-    recipe-maintainers:
-        - inducer
+  recipe-maintainers:
+    - inducer
