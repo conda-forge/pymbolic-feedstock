@@ -1,6 +1,6 @@
 {% set name = "pymbolic" %}
-{% set version = "2020.1" %}
-{% set sha256 = "ca029399f9480f6d51fbac0349fddbb42d937620deb03befa0ba94ac08895e6b" %}
+{% set version = "2021.1" %}
+{% set sha256 = "67d08ef95568408901e59f79591ba41fd3f2caaecb42b7497c38fc82fd60358c" %}
 
 package:
   name: {{ name|lower }}
@@ -18,16 +18,14 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - setuptools
     - pytools
-    - six
     - pip
   run:
-    - python
+    - python >=3.6
     - numpy
     - pytools
-    - six
 
 test:
   requires:
