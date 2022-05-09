@@ -30,6 +30,7 @@ requirements:
 test:
   requires:
     - pytest
+    - matchpy
   imports:
     - {{ name }}
   source_files:
