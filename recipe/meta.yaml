@@ -1,6 +1,6 @@
 {% set name = "pymbolic" %}
-{% set version = "2021.1" %}
-{% set sha256 = "67d08ef95568408901e59f79591ba41fd3f2caaecb42b7497c38fc82fd60358c" %}
+{% set version = "2022.1" %}
+{% set sha256 = "b52f451dd0b9803e03de3320af3b7ce5723070061c6d231c00216f6da4259012" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python >=3.6
     - setuptools
     - pytools
