@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=3.10
     - immutabledict
-    - pytools >=2022.1.14
+    - pytools >=2024.1.16
     - typing_extensions >=4.5
     # only needed for type checking
     #- useful-types
