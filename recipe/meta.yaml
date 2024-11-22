@@ -25,7 +25,8 @@ requirements:
     - immutabledict
     - pytools >=2022.1.14
     - typing_extensions >=4.5
-    - useful-types
+    # only needed for type checking
+    #- useful-types
 
 test:
   requires:
