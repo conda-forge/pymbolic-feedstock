@@ -1,36 +1,38 @@
 {% set name = "pymbolic" %}
-{% set version = "2022.2" %}
-{% set sha256 = "f82776942bb3cb72329fa1f1aa2b68ec09f237db9178c95cfdc92a6aea7cec89" %}
+{% set version = "2024.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymbolic-{{ version }}.tar.gz
+  sha256: 869b11d52c956782c4581b404eae0828c0279be49bcfe32c7e5bf9d756be0036
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
-    - setuptools
-    - pytools
+    - python >=3.10
+    - setuptools >=63
     - pip
+
   run:
-    - python >=3.6
-    - numpy
-    - pytools
+    - python >=3.10
+    - immutabledict
+    - pytools >=2024.1.16
+    - typing_extensions >=4.5
+    # only needed for type checking
+    #- useful-types
 
 test:
   requires:
     - pytest
     - matchpy
+    - numpy
   imports:
     - {{ name }}
   source_files:
@@ -43,9 +45,9 @@ about:
   home: http://pypi.python.org/pypi/pymbolic
   dev_url: http://github.com/inducer/pymbolic
   doc_url: https://documen.tician.de/pymbolic
+  summary: A package for symbolic computation
   license: MIT
   license_file: LICENSE
-  summary: A package for symbolic computation
 
 extra:
   recipe-maintainers:
