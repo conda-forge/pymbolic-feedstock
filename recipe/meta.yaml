@@ -1,6 +1,6 @@
 {% set name = "pymbolic" %}
-{% set version = "2022.2" %}
-{% set sha256 = "f82776942bb3cb72329fa1f1aa2b68ec09f237db9178c95cfdc92a6aea7cec89" %}
+{% set version = "2024.2" %}
+{% set sha256 = "869b11d52c956782c4581b404eae0828c0279be49bcfe32c7e5bf9d756be0036" %}
 
 package:
   name: {{ name|lower }}
