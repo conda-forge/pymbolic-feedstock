@@ -32,6 +32,7 @@ test:
   requires:
     - pytest
     - matchpy
+    - numpy
   imports:
     - {{ name }}
   source_files:
