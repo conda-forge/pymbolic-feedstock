@@ -1,5 +1,6 @@
 {% set name = "pymbolic" %}
-{% set version = "2024.2" %}
+{% set version = "2024.2.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,39 +8,38 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymbolic-{{ version }}.tar.gz
-  sha256: 869b11d52c956782c4581b404eae0828c0279be49bcfe32c7e5bf9d756be0036
+  sha256: c993d972bf71243a98e9fce2dbc7db6eb6b0fc0e7f319c5fbeea75f98ce5288a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10
-    - setuptools >=63
+    - python {{ python_min }}
+    - hatchling
     - pip
-
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - immutabledict
     - pytools >=2024.1.16
     - typing_extensions >=4.5
-    # only needed for type checking
-    #- useful-types
 
 test:
   requires:
+    - python {{ python_min }}
     - pytest
     - matchpy
     - numpy
+    - pip
   imports:
-    - {{ name }}
+    - pymbolic
   source_files:
     - test
   commands:
-    - (cd test && python -m pytest)        # [unix]
-    - cd test && python -m pytest      # [win]
+    - cd test && python -m pytest
+    - pip check
 
 about:
   home: http://pypi.python.org/pypi/pymbolic
