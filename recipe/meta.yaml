@@ -1,5 +1,5 @@
 {% set name = "pymbolic" %}
-{% set version = "2024.2.1" %}
+{% set version = "2024.2.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymbolic-{{ version }}.tar.gz
-  sha256: c993d972bf71243a98e9fce2dbc7db6eb6b0fc0e7f319c5fbeea75f98ce5288a
+  sha256: 976ccff0ed1b9d5ad3471cf2baa0d02e2301c1ebed5e577b2e05f633c2f53fec
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
