@@ -1,5 +1,5 @@
 {% set name = "pymbolic" %}
-{% set version = "2024.2.2" %}
+{% set version = "2025.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymbolic-{{ version }}.tar.gz
-  sha256: 976ccff0ed1b9d5ad3471cf2baa0d02e2301c1ebed5e577b2e05f633c2f53fec
+  sha256: 31efa99e1f2a6407d1d7128d356dd625d56d2002d23b3f104da5b9c3fb0a270b
 
 build:
   noarch: python
@@ -21,10 +21,11 @@ requirements:
     - hatchling
     - pip
   run:
+    - constantdict
     - python >={{ python_min }}
     - immutabledict
-    - pytools >=2024.1.16
-    - typing_extensions >=4.5
+    - pytools >=2025.2
+    - typing_extensions >=4.10
 
 test:
   requires:
